@@ -1,10 +1,17 @@
 package com.emergentes.demo.model;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "DATO_CENSADO")
 public class DatoCensado {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column
     private String temperatura;
+    @Column
     private String humedad;
 
     public DatoCensado(){}
