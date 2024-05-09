@@ -1,5 +1,6 @@
 package com.emergentes.demo.controller;
 
+import com.emergentes.demo.model.DatoCensado;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,5 +19,11 @@ public class Controller {
     public ResponseEntity<String> saveData(@RequestBody String data){
         System.out.println("Dato enviado: "+data);
         return new ResponseEntity<>(data, HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/dato")
+    public ResponseEntity<DatoCensado> saveData(@RequestBody DatoCensado dato){
+        System.out.println("Dato enviado: "+dato.toString());
+        return new ResponseEntity<>(dato, HttpStatus.OK);
     }
 }
